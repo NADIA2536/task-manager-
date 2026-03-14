@@ -1,0 +1,23 @@
+import random 
+liste_choix=["ciseau","feuille","pierre"]
+compteur_uti=0
+compteur_ord=0
+compteur_ega=0
+while True :
+    choix_uti=input("entrer choix d'utilisateur")
+    choix_ord=random.choice(liste_choix)
+    print("choi ordinateur",choix_ord)
+    if choix_uti=="stop":
+       break 
+    elif choix_uti not in liste_choix:
+       continue 
+    else :
+        if((choix_uti =="feuille" and choix_ord =="pierre")or(choix_uti=="pierre" and choix_ord=="ciseau")or(choix_uti=="ciseau" and choix_ord=="feuille")):
+           compteur_uti=compteur_uti+1
+        elif choix_uti==choix_ord:
+           compteur_ega=compteur_ega+1
+        else:
+           compteur_ord=compteur_ord+1
+print("le score de l'utilisateur est :",compteur_uti)
+print ("le scord de l'ordinateur est:",compteur_ord)
+print ("le scord de l'egalite est :",compteur_ega)
